@@ -96,7 +96,7 @@ function App() {
       </div>
 
       {/* ===== Right Main Area / 右侧主区域 ===== */}
-      <div className="flex-1 flex flex-col relative min-h-[600px]">
+      <div className="flex-1 flex flex-col relative min-h-[800px] lg:min-h-0">
         
         {/* Loading Animation / 加载动画 */}
         {loading && (
@@ -119,7 +119,8 @@ function App() {
         {geojsonData && (
           <>
             {/* 1. Map container on top (flex-1 takes up remaining space) / 地图在上面 (flex-1 占据上方所有剩余空间) */}
-            <div className="flex-1 relative">
+            {/* Set a fixed height on mobile (h-[500px]) but flex-1 on desktop / 手机端设为 500px 高度，电脑端则恢复自动填充 */}
+            <div className="h-[500px] lg:flex-1 relative">
               <MapDisplay data={geojsonData} />
             </div>
 
