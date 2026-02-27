@@ -10,7 +10,7 @@ function Dashboard({
   stats
 }) {
   return (
-    <div className="w-[360px] flex flex-col h-full bg-gray-900 border-r border-gray-800 shadow-2xl z-10 overflow-y-auto">
+    <div className="w-full flex flex-col h-full bg-gray-900 border-r border-gray-800 shadow-2xl z-10 overflow-y-auto">
       
       {/* Header Area / 头部区域 */}
       <div className="p-6 border-b border-gray-800">

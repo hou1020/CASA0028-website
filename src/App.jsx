@@ -78,16 +78,22 @@ function App() {
   }, [rawData]);
 
   return (
-    <div className="flex h-screen w-full bg-gray-900 text-white font-sans overflow-hidden">
-      
+    // lg:flex-row: Desktop sideways / 电脑端左右并排
+    // flex-col: Mobile stacked / 手机端上下堆叠
+    <div className="flex flex-col lg:flex-row min-h-screen w-full bg-gray-900 text-white font-sans overflow-x-hidden">
+    
       {/* ===== Left Control Panel / 左侧控制面板 ===== */}
-      <Dashboard 
-        year={year} 
-        setYear={setYear} 
-        severityFilter={severityFilter} 
-        setSeverityFilter={setSeverityFilter} 
-        stats={stats}
-      />
+      {/* lg:w-80: Fixed width on desktop / 电脑端固定宽度 */}
+      {/* w-full: Full width on mobile / 手机端自动撑满 */}
+      <div className="w-full lg:w-[360px] shrink-0">
+        <Dashboard 
+          year={year} 
+          setYear={setYear} 
+          severityFilter={severityFilter} 
+          setSeverityFilter={setSeverityFilter} 
+          stats={stats}
+        />
+      </div>
 
       {/* ===== Right Main Area / 右侧主区域 ===== */}
       <div className="flex-1 flex flex-col relative">
