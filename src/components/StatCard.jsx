@@ -1,3 +1,4 @@
+// src/components/StatCard.jsx
 import React from 'react';
 
 function StatCard({ title, value, textColor, borderColor }) {

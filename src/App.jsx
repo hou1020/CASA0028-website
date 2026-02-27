@@ -1,7 +1,7 @@
 // src/App.jsx
 import { useState, useEffect, useMemo } from 'react';
 import MapDisplay from './components/MapDisplay';
-import Dashboard from './components/Dashboard'; // Import the newly extracted component / 引入新拆分的组件
+import Dashboard from './components/Dashboard';
 import TrendChart from './components/TrendChart';
 
 function App() {
