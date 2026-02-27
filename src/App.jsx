@@ -55,7 +55,9 @@ function App() {
         properties: {
           id: accident.id,
           severity: accident.severity,
-          date: new Date(accident.date).toLocaleDateString(),
+          // Use 'en-GB' to enforce the British date format (DD/MM/YYYY)
+          // 使用 'en-GB' 强制执行英国日期格式 (日/月/年)
+          date: new Date(accident.date).toLocaleDateString('en-GB'),
           location: accident.location,
           casualties: accident.casualties ? accident.casualties.length : 0,
           vehicles: accident.vehicles ? accident.vehicles.length : 0
