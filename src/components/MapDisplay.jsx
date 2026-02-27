@@ -57,9 +57,19 @@ function MapDisplay({ data }) {
         zoom: 10.5,
         pitch: 0
       }}
+      // 💡 1. 限制缩放级别
+      minZoom={9}    // 最小缩放级别：防止缩得太小（9大约是整个大伦敦的视野）
+      maxZoom={18}   // 最大缩放级别：防止放得太大（18大约能看清具体的街道）
+      
+      // 💡 2. 限制拖拽范围 (Bounding Box)，把视野锁死在伦敦周边
+      maxBounds={[
+        [-1, 51], // 西南角 (Southwest)
+        [0.8, 52] // 东北角 (Northeast)
+      ]}
       style={{ width: '100%', height: '100%' }}
       // 使用带科技感的暗色底图，极大地凸显高亮的事故数据点
       mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
+      attributionControl={false}
       interactiveLayerIds={['accidents-layer']}
       onMouseMove={onHover}
       onMouseLeave={() => setHoverInfo(null)}
