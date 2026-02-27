@@ -96,7 +96,7 @@ function App() {
       </div>
 
       {/* ===== Right Main Area / 右侧主区域 ===== */}
-      <div className="flex-1 flex flex-col relative">
+      <div className="flex-1 flex flex-col relative min-h-[600px]">
         
         {/* Loading Animation / 加载动画 */}
         {loading && (
