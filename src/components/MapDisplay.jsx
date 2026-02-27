@@ -104,7 +104,9 @@ function MapDisplay({ data }) {
             </div>
             <div className="text-xs text-gray-600 space-y-1.5">
               <p><span className="font-semibold">📅 日期:</span> {hoverInfo.feature.properties.date}</p>
-              <p className="truncate"><span className="font-semibold">📍 地点:</span> {hoverInfo.feature.properties.location}</p>
+              <p className="whitespace-normal break-words leading-relaxed">
+                <span className="font-semibold">📍 地点:</span> {hoverInfo.feature.properties.location}
+              </p>
               <div className="flex gap-2 mt-3 pt-2">
                 <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded shadow-sm">
                   🩸 伤亡: <span className="font-bold">{hoverInfo.feature.properties.casualties}</span>
